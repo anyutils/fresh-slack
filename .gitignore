@@ -1,0 +1,35 @@
+# Config file
+fresh-slack.cfg
+
+# Filled, versioned, test Dockerfile
+Dockerfile-versioned
+
+# Heavy or build-artifact Python garbage
+*venv*
+*cache*
+*.pyc
+build/
+lib/
+include/
+dist/
+*egg-info*
+
+# Non-.md READMEs
+README.*
+!README.md
+
+# Test data
+*.csv
+!tests/data/*.csv
+*.db
+
+# Coverage files/folders
+*coverage*
+*cov/
+*,cover
+
+# Misc., in case they show up
+.vscode/
+*.log
+*.zip
+*.tar.gz
