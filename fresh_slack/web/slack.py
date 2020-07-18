@@ -30,16 +30,6 @@ def get_history(timestamp: int, channel_id: str) -> dict:
     return history
 
 
-def has_next_page(res: dict) -> bool:
-    '''
-    Helper for Slack API paginated responses
-    '''
-    if 'response_metadata' in res and res['response_metadata']['next_cursor'] != '':
-        return True
-    else:
-        return False
-
-
 def channel_action(channel_id) -> str:
     '''
     Returns one of 'WARN' or 'ARCHIVE'

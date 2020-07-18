@@ -17,3 +17,5 @@ read_cfg_file()
 
 slack_url = f"https://{cfg.get('FRESH_SLACK_NAME')}.slack.com"
 slack_token = cfg.get('FRESH_SLACK_TOKEN')
+warn_days = cfg.get('FRESH_SLACK_WARN_DAYS')
+archive_days = cfg.get('FRESH_SLACK_ARCHIVE_DAYS')
