@@ -12,10 +12,8 @@ def read_cfg_file(cfg_file: str = 'fresh-slack.cfg') -> None:
     fscfg = dict(fscfg['fresh-slack'])
     for key, value in fscfg.items():
         cfg[f'FRESH_{key.upper()}'] = value
-# end read_cfg_file
 
 read_cfg_file()
 
-
-slack_url = f"https://{cfg.get('FRESH_SLACK_NAME')}.slack.com/api/"
+slack_url = f"https://{cfg.get('FRESH_SLACK_NAME')}.slack.com"
 slack_token = cfg.get('FRESH_SLACK_TOKEN')

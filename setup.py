@@ -1,7 +1,12 @@
+# Not currently used; in case I ever turn this into a formal package
 import setuptools
 
 with open('README.md', 'r') as f:
     long_description = f.read()
+
+with open('requirements-dev.txt') as f:
+    requirements_dev = f.read().split('\n')
+    requirements_dev = [x for x in requirements_dev if x != '']
 
 setuptools.setup(
     name = 'fresh-slack',
@@ -17,12 +22,7 @@ setuptools.setup(
     #     'pkg >= 0.1.0'
     # ],
     extras_require = {
-        'dev': [
-            'coverage',
-            'pytest',
-            'pytest-cov',
-            'mypy'
-        ]
+        'dev': requirements_dev
     },
     classifiers = [
         'Programming Language :: Python :: 3',
@@ -31,7 +31,7 @@ setuptools.setup(
     ],
     entry_points = {
         'console_scripts': [
-            'freshen-slack = fresh-slack.main:main'
+            'freshen-slack = fresh_slack.main:main'
         ]
     },
     include_package_data = True
