@@ -1,0 +1,4 @@
+# This needs to always be the latest version, since it's built against an
+# external API. They have this as `install_requires`-free in their next
+# version
+slackclient

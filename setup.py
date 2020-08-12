@@ -4,9 +4,9 @@ import setuptools
 with open('README.md', 'r') as f:
     long_description = f.read()
 
-with open('requirements-dev.txt') as f:
-    requirements_dev = f.read().split('\n')
-    requirements_dev = [x for x in requirements_dev if x != '']
+with open('requirements.txt') as f:
+    install_requires = f.read().split('\n')
+    install_requires = [x for x in install_requires if x != '']
 
 setuptools.setup(
     name = 'fresh-slack',
@@ -18,11 +18,14 @@ setuptools.setup(
     url = 'https://github.com/anyutils/fresh-slack',
     packages = setuptools.find_packages(),
     python_requires = '>= 3.6.*',
-    # install_requires = [
-    #     'pkg >= 0.1.0'
-    # ],
+    install_requires = install_requires,
     extras_require = {
-        'dev': requirements_dev
+        'dev': [
+            'pytest >= 5.4.3',
+            'pytest-cov >= 2.10.0',
+            'coverage >= 5.2',
+            'mypy >= 0.782'
+        ]
     },
     classifiers = [
         'Programming Language :: Python :: 3',

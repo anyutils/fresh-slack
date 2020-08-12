@@ -1,5 +1,8 @@
-# Config file
-fresh-slack.cfg
+# Config file(s)
+fresh-slack*.cfg
+
+# Token files
+*_token.txt
 
 # Filled, versioned, test Dockerfile
 Dockerfile-versioned
