@@ -10,9 +10,15 @@ pkgname=$(dirname "$(find . -maxdepth 2 -name '__init__.py' | grep -v 'test' | s
 # than this value
 covreq=0
 
-# Setup venv
-python3 -m venv --clear venv
-. ./venv/bin/activate
+
+if "${NEW_VENV}"; then
+  # Setup venv, if requested
+  python3 -m venv --clear venv
+fi
+if [[ -d ./venv ]]; then
+  # shellcheck disable=SC1091
+  source ./venv/bin/activate
+fi
 
 
 install-dev() {
@@ -30,6 +36,8 @@ type-check() {
 coverage-check() {
   if [[ $(python3 -m coverage report | tail -1 | awk '{ print $NF }' | tr -d '%') -lt "${covreq}" ]]; then
     printf "\nFAILED: Insufficient test coverage (<%s%%)\n" "${covreq}" 2>&1 && exit 1
+  else
+    printf "Coverage check passed (>%s%% required)\n" "${covreq}"
   fi
 }
 
