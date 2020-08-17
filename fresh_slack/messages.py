@@ -1,19 +1,3 @@
-import fresh_slack.config as cfg
-import fresh_slack.wrappers as fsw
-
-
-fs = fsw.Slack(cfg.slack_name, cfg.slack_api_token, cfg.slack_bot_token)
-
-
-def warn_stale_channels() -> None:
-
-    raise Exception
-
-
-def archive_stale_channels() -> None:
-    raise Exception
-
-
 warning_message = '''
 Hey very quiet channel. We tend the channel garden by archiving channels that
 have been quiet for 30 straight days and this channel is one of them. Archiving
