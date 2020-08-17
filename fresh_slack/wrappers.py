@@ -8,7 +8,9 @@ class Slack():
     def __init__(self,
                  slack_name: str,
                  slack_api_token: str,
-                 slack_bot_token: str):
+                 slack_bot_token: str,
+                 warn_days: int,
+                 archive_days: int):
         self.slack_name = slack_name
         self.slack_api_token = slack_api_token
         self.slack_bot_token = slack_bot_token
