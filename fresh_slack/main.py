@@ -13,7 +13,9 @@ def main():
     # with mp.Pool() as p:
     client.warn_stale_channels()
     client.archive_stale_channels()
-    raise Exception
 
 def lambda_handler(event: Any, context: Any) -> str:
     raise Exception
+
+if __name__ == '__main__':
+    main()

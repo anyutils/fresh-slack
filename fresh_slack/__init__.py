@@ -14,3 +14,7 @@ logging.basicConfig(
         logging.StreamHandler(sys.stdout)
     ]
 )
+
+
+# Make some things top-level-importable, if desired
+from .wrappers import Slack
