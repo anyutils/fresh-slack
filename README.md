@@ -1,9 +1,16 @@
 `fresh-slack` -- to keep your Slack workspace fresh!
 ====================================================
 
-Like [`destalinator`](), but less prone to annoying you. `fresh-slack` relies
-*only* on Slack's own maintained `slackclient` package, so the risk of breakage
-should fall entirely on the Slack API and not other clever dependencies.
+Like [`destalinator`](github.com/randsleadershipslack/destalinator), but less
+prone to annoying you.
+
+`fresh-slack` relies *only* on Slack's own maintained `slackclient` package, so
+the risk of breakage should fall entirely on the Slack API and not other clever
+dependencies. The [author of `fresh-slack`](https://github.com/ryapric) usually
+tries his very best to limit dependencies in code, but the `slackclient` package
+is too good (and too official) of an abstraction to not use. Plus, its next
+major release (as of Sep 2020) will remove its own external dependencies, as
+well.
 
 Install
 -------
@@ -18,6 +25,9 @@ Install
 To install the development packages for `fresh-slack`:
 
     pip3 install --user 'fresh-slack[dev]'
+
+Note that you may need to pass in the `--user` flag to `pip3` if not running as
+root.
 
 Slack App setup
 ---------------

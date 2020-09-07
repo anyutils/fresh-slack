@@ -22,7 +22,7 @@ test-docker:
 	fi
 	@sed 's/pyver/$(pyver)/g' Dockerfile-test > Dockerfile-versioned
 	@docker build -f Dockerfile-versioned -t $(PKGNAME):python-$(pyver) .
-	@docker run --rm -it ghostwriter:python-$(pyver)
+	@docker run --rm -it $(PKGNAME):python-$(pyver)
 
 clean: FORCE
 	@if $(NEW_VENV); then find . -type d -regextype posix-extended -regex ".*venv.*" -exec rm -rf {} +; fi
